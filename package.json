@@ -1,0 +1,23 @@
+{
+  "name": "lab-six",
+  "version": "1.0.0",
+  "description": "##### I Am Bham",
+  "main": "main.js",
+  "dependencies": {
+    "less-watch-complier": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "less-watch-compiler"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nequil17/cal-lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nequil17/cal-lab/issues"
+  },
+  "homepage": "https://github.com/nequil17/cal-lab#readme"
+}
