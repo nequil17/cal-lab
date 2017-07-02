@@ -1,57 +1,29 @@
-document.addEventListener("DOMContentLoaded", function() {
+$(document).ready(function() {
+    $('span').on('click', numerals);
 });
 
-var clear = getElementByID('clear');
-clear.addEventListener("click")
+var mathArray = [];
 
-btn.appendChild(t);                                
-document.body.appendChild(btn);
-btn.style.border='3px solid blue';
-btn.style.backgroundColor='red';
+function numerals(){
+    var number = $(this).text();
+    var id = $(this).attr('id')
+        if ($.isNumeric(number) || number == "."){
+            $('#readout').append(number);
+            mathArray.push(number);
+        } else if (number == "c") {
+            $('#readout').empty();
+            mathArray.length = 0;
+        } else if (id == "result"){
+            compute();
+        } else if (id == 'multiply', 'divide', 'add', 'subtract'){
+            $('#readout').text(number);
+            mathArray.push(number)
+        } 
+ }
 
-btn.addEventListener ("click", function() {
-    $('#' + event.which).css('background-color', 'yellow');
-        $(document).keyup(function() {
-            $('#' + event.which).css('background-color', '#f5f5f5');
-        });
-    });
-
-// buttonC.addEventListener('click', function() {
-
-// });
-
-// buttonNine.addEventListener('click', function() {
-
-// });
-
-// buttonEight.addEventListener('click', function() {
-
-// });
-
-// buttonSeven.addEventListener('click', function() {
-
-// });
-
-// buttonSix.addEventListener('click', function() {
-
-// });
-
-// buttonFive.addEventListener('click', function() {
-
-// });
-
-// buttonFour.addEventListener('click', function() {
-
-// });
-
-// buttonThree.addEventListener('click', function() {
-
-// });
-
-// buttonTwo.addEventListener('click', function() {
-
-// });
-
-// buttonOne.addEventListener('click', function() {
-
-// });
+function compute() {
+    var mathString = mathArray.join("");
+    var equal = eval(mathString);
+    $('#readout').text(equal);
+    mathArray = [];
+}
