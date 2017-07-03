@@ -1,8 +1,19 @@
-$(document).ready(function() {
-    $('span').on('click', numerals);
+$(document).ready(function() {   
 });
 
+$('span').on('click', numerals);
+
 var mathArray = [];
+var key = document.querySelector('num');
+
+/*Gets highlight to work*/
+document.addEventListener('mousedown', function() {
+    key.style.backgroundColor = 'yellow';
+});
+
+document.addEventListener('mouseup', function() {
+    key.style.backgroundColor = '';
+});
 
 function numerals(){
     var number = $(this).text();
