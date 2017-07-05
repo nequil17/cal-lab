@@ -1,32 +1,32 @@
-$(document).ready(function() {   
+$(document).ready(function() { 
+
+});
+
+var key = document.getElementsByClassName('num');
+
+$(document).mousedown(function(e) {
+    $('span').css('background-color', 'yellow');
+    $(document).mouseup(function(e) {
+        $('span').css('background-color', '');
+    });
 });
 
 $('span').on('click', numerals);
-
 var mathArray = [];
-var key = document.querySelector('num');
 
-/*Gets highlight to work*/
-document.addEventListener('mousedown', function() {
-    key.style.backgroundColor = 'yellow';
-});
 
-document.addEventListener('mouseup', function() {
-    key.style.backgroundColor = '';
-});
-
-function numerals(){
+function numerals() {
     var number = $(this).text();
     var id = $(this).attr('id')
-        if ($.isNumeric(number) || number == "."){
+        if ($.isNumeric(number) || number == ".") {
             $('#readout').append(number);
             mathArray.push(number);
         } else if (number == "c") {
             $('#readout').empty();
             mathArray.length = 0;
-        } else if (id == "result"){
+        } else if (id == "result") {
             compute();
-        } else if (id == 'multiply', 'divide', 'add', 'subtract'){
+        } else if (id == 'multiply', 'divide', 'add', 'subtract') {
             $('#readout').text(number);
             mathArray.push(number)
         } 
